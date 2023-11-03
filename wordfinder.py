@@ -26,15 +26,18 @@ class WordFinder:
 
     def word_choice(self):
         lines = open(self.file).read().splitlines()
-        for num in range(3):
+        while len(self.word_list) < 3:
             line = choice(lines)
-            self.word_list.append(line)
+            if len(line) != 1:
+                self.word_list.append(line)
 
     def random(self):
         if len(self.word_list) == 0:
             self.word_choice()
         
         return choice(self.word_list)
+
+#solution used different methods
 
         
 
